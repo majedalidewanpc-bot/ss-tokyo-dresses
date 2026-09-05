@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="UPI QR code placeholder">
+  <rect width="240" height="240" fill="#ffffff"/>
+  <rect x="10" y="10" width="220" height="220" rx="12" fill="none" stroke="#7a1232" stroke-width="4"/>
+  <g fill="#21191b">
+    <rect x="28" y="28" width="54" height="54"/><rect x="38" y="38" width="34" height="34" fill="#fff"/><rect x="47" y="47" width="16" height="16"/>
+    <rect x="158" y="28" width="54" height="54"/><rect x="168" y="38" width="34" height="34" fill="#fff"/><rect x="177" y="47" width="16" height="16"/>
+    <rect x="28" y="158" width="54" height="54"/><rect x="38" y="168" width="34" height="34" fill="#fff"/><rect x="47" y="177" width="16" height="16"/>
+    <path d="M99 30h12v14h15v13h-15v14H99V57H87V44h12V30zm35 17h14v13h-14V47zm-33 43h13v13h16v14h-16v15h-13v-15H88v-14h13V90zm42 1h14v19h-14V91zm20 0h13v13h-13V91zm-10 31h14v15h16v13h-30v-28zm-54 24h14v14h14v14H99v-28zm43 0h14v14h14v14h-28v-28zm42 1h14v27h-14v-27zM91 171h14v14H91v-14zm42 0h14v14h-14v-14zm43 0h14v14h-14v-14z"/>
+  </g>
+  <text x="120" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#7a1232">Replace with your UPI QR</text>
+</svg>
