@@ -180,6 +180,59 @@ const PRODUCTS = [
       "images/queen-blouse-flat-lay-maroon.jpeg"
     ],
     badge: "New arrival"
+  },
+  {
+    id: "barby-blouse",
+    name: "Barby Blouse",
+    shortName: "Barby",
+    // Catalogue offer: MRP ₹1,599 less 50% = selling price ₹799.
+    price: 799,
+    mrp: 1599,
+    discountPercent: 50,
+    rating: 4.9,
+    ratingCount: 358,
+    category: "Pearl Embellishment",
+    material: "Fancy Silk",
+    description:
+      "Barby is a Fancy silk blouse adorned with pearl-inspired floral motifs and a beautifully embroidered sleeve border. Its graceful scoop-neck front and elegant open-back tie-up create a festive look that feels polished from every angle.",
+    highlights: [
+      "Fancy Silk with pearl floral embellishments",
+      "Embroidered scalloped sleeve border",
+      "Open-back design with tassel tie-up",
+      "Made in India",
+      "Fabric: Fancy Silk",
+      "Sleeve Length: Short Sleeves",
+      "Pattern: Embroidered",
+      "Golden embroidery and sequins work",
+      "Country of Origin: India"
+    ],
+    sizes: ["32", "34"],
+    sizeGuide: [
+      { size: "32", bust: "36 in", length: "14 in", shoulder: "11 in" },
+      { size: "34", bust: "36 in", length: "15 in", shoulder: "12 in" }
+    ],
+    colours: [
+      { name: "Red", hex: "#b81632", image: "images/barby-red-front.jpeg" },
+      { name: "Tusser", hex: "#bc9352", image: "images/barby-tusser-front.jpeg" },
+      { name: "Wine", hex: "#581447", image: "images/barby-wine-front.jpeg" },
+      { name: "Pink", hex: "#c3196a", image: "images/barby-pink-front.jpeg" }
+    ],
+    gallery: [
+      "images/barby-red-front.jpeg",
+      "images/barby-red-back.jpeg",
+      "images/barby-red-side.jpeg",
+      "images/barby-red-detail.jpeg",
+      "images/barby-tusser-front.jpeg",
+      "images/barby-tusser-back.jpeg",
+      "images/barby-tusser-side.jpeg",
+      "images/barby-tusser-detail.jpeg",
+      "images/barby-wine-front.jpeg",
+      "images/barby-wine-back.jpeg",
+      "images/barby-wine-side.jpeg",
+      "images/barby-wine-detail.jpeg",
+      "images/barby-pink-front.jpeg"
+    ],
+    badge: "New arrival"
   }
 ];
 
