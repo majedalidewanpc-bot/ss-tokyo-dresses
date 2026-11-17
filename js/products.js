@@ -34,19 +34,19 @@ const PRODUCTS = [
       { size: "34", bust: "36 in", length: "15 in", shoulder: "12 in" }
     ],
     colours: [
-      { name: "Maroon", hex: "#7f1636", image: "images/masoba-cover-maroon.jpeg" },
+      {
+        name: "Maroon", hex: "#7f1636", image: "images/masoba-cover-maroon.jpeg",
+        gallery: ["images/masoba-back-maroon.jpeg", "images/masoba-side-maroon.jpeg"]
+      },
       { name: "Navy Blue", hex: "#142a55", image: "images/masoba-navy-front.jpeg" },
       { name: "Black", hex: "#171517", image: "images/masoba-black-front.jpeg" },
       { name: "Wine", hex: "#641b2b", image: "images/masoba-wine-view.png" },
-      { name: "Red", hex: "#b81632", image: "images/masoba-red-front.jpeg" },
+      {
+        name: "Red", hex: "#b81632", image: "images/masoba-red-front.jpeg",
+        gallery: ["images/masoba-red-back.jpeg"]
+      },
       { name: "Bottle Green", hex: "#0e4c3a", image: "images/masoba-green-front.jpeg" },
       { name: "Rani Pink", hex: "#b21968", image: "images/masoba-rani-pink-front.jpeg" }
-    ],
-    gallery: [
-      "images/masoba-cover-maroon.jpeg",
-      "images/masoba-back-maroon.jpeg",
-      "images/masoba-side-maroon.jpeg",
-      "images/masoba-red-back.jpeg"
     ],
     badge: "New collection"
   },
@@ -81,15 +81,18 @@ const PRODUCTS = [
       { size: "34", bust: "36 in", length: "15 in", shoulder: "12 in" }
     ],
     colours: [
-      { name: "Black", hex: "#171517", image: "images/mumtaz-cover-black.png" },
-      { name: "Purple", hex: "#472054", image: "images/mumtaz-front-purple.png" },
-      { name: "Bottle Green", hex: "#0b5138", image: "images/mumtaz-front-green.png" }
-    ],
-    gallery: [
-      "images/mumtaz-cover-black.png",
-      "images/mumtaz-back-black.png",
-      "images/mumtaz-front-purple.png",
-      "images/mumtaz-detail-green.jpeg"
+      {
+        name: "Black", hex: "#171517", image: "images/mumtaz-cover-black.png",
+        gallery: ["images/mumtaz-back-black.png"]
+      },
+      {
+        name: "Purple", hex: "#472054", image: "images/mumtaz-front-purple.png",
+        gallery: ["images/mumtaz-back-purple.png"]
+      },
+      {
+        name: "Bottle Green", hex: "#0b5138", image: "images/mumtaz-front-green.png",
+        gallery: ["images/mumtaz-front-green-alt.png", "images/mumtaz-detail-green.jpeg"]
+      }
     ],
     badge: "Festive pick"
   },
@@ -124,20 +127,18 @@ const PRODUCTS = [
       { size: "34", bust: "36 in", length: "15 in", shoulder: "12 in" }
     ],
     colours: [
-      { name: "Rani Pink", hex: "#bb1460", image: "images/mumtaz-d2-rani-front.png" },
-      { name: "Bottle Green", hex: "#0b5138", image: "images/mumtaz-d2-green-front.png" },
-      { name: "White", hex: "#f8f6ef", image: "images/mumtaz-d2-white-front.png" }
-    ],
-    gallery: [
-      "images/mumtaz-d2-rani-front.png",
-      "images/mumtaz-d2-rani-back.png",
-      "images/mumtaz-d2-green-front.png",
-      "images/mumtaz-d2-green-back.png",
-      "images/mumtaz-d2-white-front.png",
-      "images/mumtaz-d2-white-back.png",
-      "images/mumtaz-d2-rani-detail.png",
-      "images/mumtaz-d2-green-detail.png",
-      "images/mumtaz-d2-white-detail.png"
+      {
+        name: "Rani Pink", hex: "#bb1460", image: "images/mumtaz-d2-rani-front.png",
+        gallery: ["images/mumtaz-d2-rani-back.png", "images/mumtaz-d2-rani-detail.png"]
+      },
+      {
+        name: "Bottle Green", hex: "#0b5138", image: "images/mumtaz-d2-green-front.png",
+        gallery: ["images/mumtaz-d2-green-back.png", "images/mumtaz-d2-green-detail.png"]
+      },
+      {
+        name: "White", hex: "#f8f6ef", image: "images/mumtaz-d2-white-front.png",
+        gallery: ["images/mumtaz-d2-white-back.png", "images/mumtaz-d2-white-detail.png"]
+      }
     ],
     badge: "New arrival"
   },
@@ -212,25 +213,19 @@ const PRODUCTS = [
       { size: "34", bust: "36 in", length: "15 in", shoulder: "12 in" }
     ],
     colours: [
-      { name: "Red", hex: "#b81632", image: "images/barby-red-front.jpeg" },
-      { name: "Tusser", hex: "#bc9352", image: "images/barby-tusser-front.jpeg" },
-      { name: "Wine", hex: "#581447", image: "images/barby-wine-front.jpeg" },
+      {
+        name: "Red", hex: "#b81632", image: "images/barby-red-front.jpeg",
+        gallery: ["images/barby-red-back.jpeg", "images/barby-red-side.jpeg", "images/barby-red-detail.jpeg"]
+      },
+      {
+        name: "Tusser", hex: "#bc9352", image: "images/barby-tusser-front.jpeg",
+        gallery: ["images/barby-tusser-back.jpeg", "images/barby-tusser-side.jpeg", "images/barby-tusser-detail.jpeg"]
+      },
+      {
+        name: "Wine", hex: "#581447", image: "images/barby-wine-front.jpeg",
+        gallery: ["images/barby-wine-back.jpeg", "images/barby-wine-side.jpeg", "images/barby-wine-detail.jpeg"]
+      },
       { name: "Pink", hex: "#c3196a", image: "images/barby-pink-front.jpeg" }
-    ],
-    gallery: [
-      "images/barby-red-front.jpeg",
-      "images/barby-red-back.jpeg",
-      "images/barby-red-side.jpeg",
-      "images/barby-red-detail.jpeg",
-      "images/barby-tusser-front.jpeg",
-      "images/barby-tusser-back.jpeg",
-      "images/barby-tusser-side.jpeg",
-      "images/barby-tusser-detail.jpeg",
-      "images/barby-wine-front.jpeg",
-      "images/barby-wine-back.jpeg",
-      "images/barby-wine-side.jpeg",
-      "images/barby-wine-detail.jpeg",
-      "images/barby-pink-front.jpeg"
     ],
     badge: "New arrival"
   },

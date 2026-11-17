@@ -200,33 +200,48 @@ function renderSharedLayout() {
   return pageUrl;
 }
 
-function productCard(product) {
-  const firstColour = product.colours[0];
+const productsByPrice = [...PRODUCTS].sort((a, b) => b.price - a.price);
+
+function productUrl(product, colour) {
+  const params = new URLSearchParams({ id: product.id });
+  if (colour) params.set("colour", colour.name);
+  return `product.html?${params}`;
+}
+
+function productCard(product, variant) {
+  const colour = variant || product.colours[0];
+  const url = productUrl(product, variant);
+  const title = variant && !product.name.toLowerCase().includes(colour.name.toLowerCase())
+    ? `${product.name} — ${colour.name}`
+    : product.name;
   const rating = product.rating || 4.5;
   const ratingCount = product.ratingCount || 149;
   const mrp = product.mrp || product.price;
   const discountPercent = product.discountPercent || 0;
   return `
     <article class="product-card">
-      <a class="product-image-link" href="product.html?id=${encodeURIComponent(product.id)}" aria-label="View ${product.name}">
-        <img src="${firstColour.image}" alt="${firstColour.name} ${product.name} in ${product.material}" loading="lazy">
+      <a class="product-image-link" href="${url}" aria-label="View ${title}">
+        <img src="${colour.image}" alt="${product.name} in ${colour.name}" loading="lazy">
         <span class="product-badge${product.badgeTheme ? ` product-badge--${product.badgeTheme}` : ""}">${product.badge}</span>
         ${product.promoBadge ? `<span class="product-sale-sticker">${product.promoBadge}</span>` : ""}
         <span class="product-image-overlay">View details</span>
       </a>
       <div class="product-card-content">
         <p class="eyebrow">${product.category}</p>
-        <h3><a href="product.html?id=${encodeURIComponent(product.id)}">${product.name}</a></h3>
+        <h3><a href="${url}">${title}</a></h3>
         <div class="product-card-meta"><span>${product.material}</span><span aria-hidden="true">·</span><span>Made in India</span></div>
         <p class="product-rating" aria-label="Rated ${rating} out of 5 by ${ratingCount} customers"><span aria-hidden="true">★</span><strong>${rating}</strong><span>${ratingCount} ratings</span></p>
-        <div class="product-card-bottom"><div class="product-price-wrap"><strong class="product-sale-price">${formatMoney(product.price)}</strong>${mrp > product.price ? `<s class="product-mrp">${formatMoney(mrp)}</s><span class="product-discount">${discountPercent}% OFF</span>` : ""}</div><a class="text-link" href="product.html?id=${encodeURIComponent(product.id)}">Choose colour <span aria-hidden="true">→</span></a></div>
+        <div class="product-card-bottom"><div class="product-price-wrap"><strong class="product-sale-price">${formatMoney(product.price)}</strong>${mrp > product.price ? `<s class="product-mrp">${formatMoney(mrp)}</s><span class="product-discount">${discountPercent}% OFF</span>` : ""}</div><a class="text-link" href="${url}">${variant ? "Choose size" : "Choose colour"} <span aria-hidden="true">→</span></a></div>
       </div>
     </article>`;
 }
 
 function renderHomePage() {
   const featuredSlot = document.getElementById("featured-products");
-  if (featuredSlot) featuredSlot.innerHTML = PRODUCTS.map(productCard).join("");
+  if (!featuredSlot) return;
+  featuredSlot.innerHTML = productsByPrice
+    .flatMap((product) => product.colours.map((colour) => productCard(product, colour)))
+    .join("");
 }
 
 function renderShopPage() {
@@ -244,12 +259,12 @@ function renderShopPage() {
   function updateGrid() {
     const phrase = searchInput.value.trim().toLowerCase();
     const category = categorySelect.value;
-    const filteredProducts = PRODUCTS.filter((product) => {
+    const filteredProducts = productsByPrice.filter((product) => {
       const matchesSearch = `${product.name} ${product.category} ${product.material}`.toLowerCase().includes(phrase);
       const matchesCategory = !category || product.category === category;
       return matchesSearch && matchesCategory;
     });
-    grid.innerHTML = filteredProducts.length ? filteredProducts.map(productCard).join("") : `<p class="empty-state">No blouses found. Try another search.</p>`;
+    grid.innerHTML = filteredProducts.length ? filteredProducts.map((product) => productCard(product)).join("") : `<p class="empty-state">No blouses found. Try another search.</p>`;
     count.textContent = `${filteredProducts.length} design${filteredProducts.length === 1 ? "" : "s"}`;
   }
 
@@ -263,7 +278,9 @@ function renderProductPage() {
   const productSlot = document.getElementById("product-detail");
   if (!productSlot) return;
 
-  const product = getProduct(new URLSearchParams(window.location.search).get("id"));
+  const params = new URLSearchParams(window.location.search);
+  const product = getProduct(params.get("id"));
+  let chosenColour = product.colours.find((colour) => colour.name === params.get("colour")) || product.colours[0];
   document.title = `${product.name} | SS TOKYO DRESSES`;
   const productDescription = `Shop the ${product.name}: ${product.category.toLowerCase()} in ${product.material.toLowerCase()}, available in sizes ${product.sizes.join(" and ")}.`;
   const descriptionTag = document.querySelector("meta[name='description']");
@@ -275,10 +292,6 @@ function renderProductPage() {
   if (descriptionTag) descriptionTag.content = productDescription;
   if (ogTitle) ogTitle.content = `${product.name} | SS TOKYO DRESSES`;
   if (ogDescription) ogDescription.content = productDescription;
-  if (ogImage) ogImage.content = `https://sstokyodresses.store/${product.colours[0].image}`;
-  if (ogImageAlt) ogImageAlt.content = `${product.colours[0].name} ${product.name} from SS TOKYO DRESSES`;
-  if (ogUrl) ogUrl.content = `https://sstokyodresses.store/product.html?id=${encodeURIComponent(product.id)}`;
-  let chosenColour = product.colours[0];
   let chosenSize = product.sizes[0];
   let selectedImage = chosenColour.image;
   const sizeGuide = product.sizeGuide || product.sizes.map((size) => ({ size, bust: "—", length: "—", shoulder: "—" }));
@@ -292,9 +305,10 @@ function renderProductPage() {
   const sizeList = product.sizes.map((size) => `<strong>${size}</strong>`).join(" and ");
 
   function render() {
-    const galleryImages = product.colours.length === 1
-      ? product.gallery
-      : [selectedImage, ...product.gallery.filter((image) => image !== selectedImage)].slice(0, 4);
+    const galleryImages = product.gallery || [chosenColour.image, ...(chosenColour.gallery || [])];
+    if (ogImage) ogImage.content = `https://sstokyodresses.store/${chosenColour.image}`;
+    if (ogImageAlt) ogImageAlt.content = `${product.name} in ${chosenColour.name}`;
+    if (ogUrl) ogUrl.content = new URL(productUrl(product, chosenColour), "https://sstokyodresses.store/").href;
     productSlot.innerHTML = `
       <div class="breadcrumb container"><a href="index.html">Home</a><span>/</span><a href="shop.html">Shop</a><span>/</span><span>${product.name}</span></div>
       <section class="product-detail container">
@@ -324,13 +338,18 @@ function renderProductPage() {
         <div><p class="eyebrow">Product highlights</p><h2>Made to feel special</h2><ul class="feature-list">${product.highlights.map((highlight) => `<li>${highlight}</li>`).join("")}</ul></div>
         <aside class="size-guide-card"><p class="eyebrow">Size guide</p><h2>Find your fit</h2><p>Available in sizes ${sizeList}. Please compare your usual blouse size before ordering.</p>${sizeGuideMarkup}<p class="size-note">Need help selecting a size? Email <a href="mailto:${STORE.supportEmail}">our customer support team</a>.</p></aside>
       </section>
-      <section class="related-section"><div class="container"><p class="eyebrow">Complete your collection</p><h2>You may also love</h2><div class="product-grid product-grid--related">${PRODUCTS.filter((item) => item.id !== product.id).map(productCard).join("")}</div></div></section>`;
+      <section class="related-section"><div class="container"><p class="eyebrow">Complete your collection</p><h2>You may also love</h2><div class="product-grid product-grid--related">${productsByPrice.filter((item) => item.id !== product.id).map((item) => productCard(item)).join("")}</div></div></section>`;
 
     let quantity = 1;
     productSlot.querySelectorAll("[data-colour]").forEach((button) => {
       button.addEventListener("click", () => {
         chosenColour = product.colours.find((colour) => colour.name === button.dataset.colour) || chosenColour;
         selectedImage = chosenColour.image;
+        if (window.location.protocol !== "file:") {
+          const url = new URL(window.location.href);
+          url.searchParams.set("colour", chosenColour.name);
+          window.history.replaceState(null, "", url);
+        }
         render();
       });
     });
