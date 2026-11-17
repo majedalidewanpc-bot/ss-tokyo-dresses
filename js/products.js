@@ -274,7 +274,7 @@ const PRODUCTS = [
       "images/cinderella-maroon-flat-lay.png"
     ],
     badge: "New arrival",
-    promoBadge: "42% OFF · HOT SELL"
+    promoBadge: "42% OFF"
   },
   {
     id: "cinderella-bottle-green-blouse",
