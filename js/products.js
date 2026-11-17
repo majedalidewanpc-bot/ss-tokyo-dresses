@@ -30,7 +30,7 @@ const PRODUCTS = [
     ],
     sizes: ["32", "34"],
     sizeGuide: [
-      { size: "32", bust: "36 in", length: "14 in", shoulder: "11 in" },
+      { size: "32", bust: "34 in", length: "14.5 in", shoulder: "11.5 in" },
       { size: "34", bust: "36 in", length: "15 in", shoulder: "12 in" }
     ],
     colours: [
@@ -77,7 +77,7 @@ const PRODUCTS = [
     ],
     sizes: ["32", "34"],
     sizeGuide: [
-      { size: "32", bust: "36 in", length: "14 in", shoulder: "11 in" },
+      { size: "32", bust: "34 in", length: "14.5 in", shoulder: "11.5 in" },
       { size: "34", bust: "36 in", length: "15 in", shoulder: "12 in" }
     ],
     colours: [
@@ -120,7 +120,7 @@ const PRODUCTS = [
     ],
     sizes: ["32", "34"],
     sizeGuide: [
-      { size: "32", bust: "36 in", length: "14 in", shoulder: "11 in" },
+      { size: "32", bust: "34 in", length: "14.5 in", shoulder: "11.5 in" },
       { size: "34", bust: "36 in", length: "15 in", shoulder: "12 in" }
     ],
     colours: [
@@ -168,7 +168,7 @@ const PRODUCTS = [
     ],
     sizes: ["32", "34"],
     sizeGuide: [
-      { size: "32", bust: "36 in", length: "14 in", shoulder: "11 in" },
+      { size: "32", bust: "34 in", length: "14.5 in", shoulder: "11.5 in" },
       { size: "34", bust: "36 in", length: "15 in", shoulder: "12 in" }
     ],
     colours: [
@@ -208,7 +208,7 @@ const PRODUCTS = [
     ],
     sizes: ["32", "34"],
     sizeGuide: [
-      { size: "32", bust: "36 in", length: "14 in", shoulder: "11 in" },
+      { size: "32", bust: "34 in", length: "14.5 in", shoulder: "11.5 in" },
       { size: "34", bust: "36 in", length: "15 in", shoulder: "12 in" }
     ],
     colours: [
@@ -261,7 +261,7 @@ const PRODUCTS = [
     ],
     sizes: ["32", "34"],
     sizeGuide: [
-      { size: "32", bust: "36 in", length: "14 in", shoulder: "11 in" },
+      { size: "32", bust: "34 in", length: "14.5 in", shoulder: "11.5 in" },
       { size: "34", bust: "36 in", length: "15 in", shoulder: "12 in" }
     ],
     colours: [
@@ -304,7 +304,7 @@ const PRODUCTS = [
     ],
     sizes: ["32", "34"],
     sizeGuide: [
-      { size: "32", bust: "36 in", length: "14 in", shoulder: "11 in" },
+      { size: "32", bust: "34 in", length: "14.5 in", shoulder: "11.5 in" },
       { size: "34", bust: "36 in", length: "15 in", shoulder: "12 in" }
     ],
     colours: [
