@@ -273,7 +273,8 @@ const PRODUCTS = [
       "images/cinderella-maroon-back.png",
       "images/cinderella-maroon-flat-lay.png"
     ],
-    badge: "New arrival",
+    badge: "Hot sell",
+    badgeTheme: "yellow",
     promoBadge: "42% OFF"
   },
   {

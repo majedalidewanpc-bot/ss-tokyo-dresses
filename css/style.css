@@ -145,6 +145,7 @@ textarea { resize: vertical; }
 .product-card:hover .product-image-link img { transform: scale(1.035); }
 .product-badge { position: absolute; top: 0; left: 0; padding: 7px 10px; color: var(--white); border-radius: 0 0 10px; background: var(--maroon-dark); font-size: 0.6rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
 .product-badge--green { background: #0b5138; }
+.product-badge--yellow { color: #26030b; background: #f4c542; }
 .product-sale-sticker { position: absolute; top: 9px; right: 9px; z-index: 1; display: inline-flex; align-items: center; justify-content: center; width: 62px; height: 62px; padding: 6px; color: var(--white); border: 2px solid var(--white); border-radius: 50%; background: #c62836; box-shadow: 0 3px 10px rgba(38, 3, 11, 0.3); font-size: 0.62rem; font-weight: 900; letter-spacing: 0.04em; line-height: 1.1; text-align: center; text-transform: uppercase; }
 .product-image-overlay { position: absolute; right: 12px; bottom: 12px; padding: 7px 10px; color: var(--ink); border-radius: 999px; background: rgba(255, 255, 255, 0.92); font-size: 0.65rem; font-weight: 800; opacity: 0; transform: translateY(5px); transition: opacity 180ms ease, transform 180ms ease; }
 .product-card:hover .product-image-overlay { opacity: 1; transform: translateY(0); }
