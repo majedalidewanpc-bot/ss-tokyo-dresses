@@ -317,7 +317,8 @@ const PRODUCTS = [
       "images/cinderella-bottle-green-flat-lay.png"
     ],
     badge: "New arrival",
-    badgeTheme: "green"
+    badgeTheme: "green",
+    promoBadge: "46% OFF"
   }
 ];
 
