@@ -233,6 +233,47 @@ const PRODUCTS = [
       "images/barby-pink-front.jpeg"
     ],
     badge: "New arrival"
+  },
+  {
+    id: "cinderella-maroon-blouse",
+    name: "Cinderella Maroon Colour Blouse for Women",
+    shortName: "Cinderella",
+    // Catalogue offer: MRP ₹2,249 less 2% = selling price ₹2,199.
+    price: 2199,
+    mrp: 2249,
+    discountPercent: 2,
+    rating: 4.9,
+    ratingCount: 348,
+    category: "Heavy Embroidery",
+    material: "Vichitra Silk",
+    description:
+      "Cinderella brings a richer finish to your saree look with striking heavy embroidery, a sculpted neckline and ornate sleeve borders. Its Vichitra silk base and statement open-back tie detail create a festive blouse made to stand out. Discover amazing with our new Designer Blouse! Made from soft Silk fabric and adorned with stunning fancy Golden Embroidery and Sequins work, this blouse offers the perfect combination of fashion and comfort.",
+    highlights: [
+      "Vichitra silk with heavy embroidery",
+      "Ornate neckline and sleeve border work",
+      "Open-back design with tassel tie-up",
+      "Made in India",
+      "Fabric: Vichitra Silk",
+      "Sleeve Length: Short Sleeves",
+      "Pattern: Embroidery",
+      "Fancy golden embroidery and sequins work",
+      "Country of Origin: India"
+    ],
+    sizes: ["32", "34"],
+    sizeGuide: [
+      { size: "32", bust: "36 in", length: "14 in", shoulder: "11 in" },
+      { size: "34", bust: "36 in", length: "15 in", shoulder: "12 in" }
+    ],
+    colours: [
+      { name: "Maroon", hex: "#75142d", image: "images/cinderella-maroon-front.png" }
+    ],
+    gallery: [
+      "images/cinderella-maroon-front.png",
+      "images/cinderella-maroon-back-angle.png",
+      "images/cinderella-maroon-back.png",
+      "images/cinderella-maroon-flat-lay.png"
+    ],
+    badge: "New arrival"
   }
 ];
 
