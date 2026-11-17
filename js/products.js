@@ -275,6 +275,48 @@ const PRODUCTS = [
     ],
     badge: "New arrival",
     promoBadge: "42% OFF · HOT SELL"
+  },
+  {
+    id: "cinderella-bottle-green-blouse",
+    name: "Cinderella Bottle Green Colour Blouse for Women",
+    shortName: "Cinderella Green",
+    // Catalogue offer: MRP ₹2,349 less 46% = selling price ₹1,259.
+    price: 1259,
+    mrp: 2349,
+    discountPercent: 46,
+    rating: 4.9,
+    ratingCount: 203,
+    category: "Heavy Embroidery",
+    material: "Vichitra Silk",
+    description:
+      "Cinderella Bottle Green brings a richer finish to your saree look with striking heavy embroidery, a sculpted neckline and ornate sleeve borders. Its Vichitra silk base and statement open-back tie detail create a festive blouse made to stand out. Discover amazing with our new Designer Blouse! Made from soft Silk fabric and adorned with stunning fancy Golden Embroidery and Sequins work, this blouse offers the perfect combination of fashion and comfort.",
+    highlights: [
+      "Vichitra silk with heavy embroidery",
+      "Ornate neckline and sleeve border work",
+      "Open-back design with tassel tie-up",
+      "Made in India",
+      "Fabric: Vichitra Silk",
+      "Sleeve Length: Short Sleeves",
+      "Pattern: Embroidery",
+      "Fancy golden embroidery and sequins work",
+      "Country of Origin: India"
+    ],
+    sizes: ["32", "34"],
+    sizeGuide: [
+      { size: "32", bust: "36 in", length: "14 in", shoulder: "11 in" },
+      { size: "34", bust: "36 in", length: "15 in", shoulder: "12 in" }
+    ],
+    colours: [
+      { name: "Bottle Green", hex: "#0b5138", image: "images/cinderella-bottle-green-front.png" }
+    ],
+    gallery: [
+      "images/cinderella-bottle-green-front.png",
+      "images/cinderella-bottle-green-back-angle.png",
+      "images/cinderella-bottle-green-back.png",
+      "images/cinderella-bottle-green-flat-lay.png"
+    ],
+    badge: "New arrival",
+    badgeTheme: "green"
   }
 ];
 

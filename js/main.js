@@ -210,7 +210,7 @@ function productCard(product) {
     <article class="product-card">
       <a class="product-image-link" href="product.html?id=${encodeURIComponent(product.id)}" aria-label="View ${product.name}">
         <img src="${firstColour.image}" alt="${firstColour.name} ${product.name} in ${product.material}" loading="lazy">
-        <span class="product-badge">${product.badge}</span>
+        <span class="product-badge${product.badgeTheme === "green" ? " product-badge--green" : ""}">${product.badge}</span>
         ${product.promoBadge ? `<span class="product-sale-sticker">${product.promoBadge}</span>` : ""}
         <span class="product-image-overlay">View details</span>
       </a>
