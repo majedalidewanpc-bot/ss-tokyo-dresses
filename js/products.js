@@ -319,6 +319,43 @@ const PRODUCTS = [
     badge: "New arrival",
     badgeTheme: "green",
     promoBadge: "46% OFF"
+  },
+  {
+    id: "barby-maroon-blouse",
+    name: "Barby Maroon Blouse For Women",
+    shortName: "Barby Maroon",
+    price: 799,
+    mrp: 1599,
+    discountPercent: 50,
+    rating: 4.9,
+    ratingCount: 416,
+    category: "Pearl Embellishment",
+    material: "Fancy Silk",
+    description:
+      "Gold floral embroidery frames the scoop neckline and short sleeves of this maroon Fancy Silk blouse. The deep scoop back ties with matching embroidered tassels.",
+    highlights: [
+      "Gold floral embroidery with pearl-inspired accents",
+      "Embroidered sleeve borders",
+      "Scoop back with matching tassel ties",
+      "Made in India"
+    ],
+    sizes: ["32", "34"],
+    sizeGuide: [
+      { size: "32", bust: "34 in", length: "14.5 in", shoulder: "11.5 in" },
+      { size: "34", bust: "36 in", length: "15 in", shoulder: "12 in" }
+    ],
+    colours: [
+      { name: "Maroon", hex: "#641825", image: "images/barby-maroon-front.jpg" }
+    ],
+    gallery: [
+      "images/barby-maroon-front.jpg",
+      "images/barby-maroon-flat-back.jpg",
+      "images/barby-maroon-flat-front.jpg",
+      "images/barby-maroon-neckline.jpg",
+      "images/barby-maroon-side.jpg",
+      "images/barby-maroon-back.jpg"
+    ],
+    badge: "New arrival"
   }
 ];
 

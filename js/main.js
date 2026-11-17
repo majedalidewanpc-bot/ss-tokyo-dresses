@@ -253,8 +253,8 @@ function renderShopPage() {
     count.textContent = `${filteredProducts.length} design${filteredProducts.length === 1 ? "" : "s"}`;
   }
 
-  filterForm.addEventListener("input", updateGrid);
-  filterForm.addEventListener("change", updateGrid);
+  searchInput.addEventListener("input", updateGrid);
+  categorySelect.addEventListener("change", updateGrid);
   filterForm.addEventListener("submit", (event) => event.preventDefault());
   updateGrid();
 }
@@ -292,12 +292,14 @@ function renderProductPage() {
   const sizeList = product.sizes.map((size) => `<strong>${size}</strong>`).join(" and ");
 
   function render() {
-    const galleryImages = [selectedImage, ...product.gallery.filter((image) => image !== selectedImage)].slice(0, 4);
+    const galleryImages = product.colours.length === 1
+      ? product.gallery
+      : [selectedImage, ...product.gallery.filter((image) => image !== selectedImage)].slice(0, 4);
     productSlot.innerHTML = `
       <div class="breadcrumb container"><a href="index.html">Home</a><span>/</span><a href="shop.html">Shop</a><span>/</span><span>${product.name}</span></div>
       <section class="product-detail container">
         <div class="product-gallery">
-          <div class="product-main-image"><img id="main-product-image" src="${selectedImage}" alt="${chosenColour.name} ${product.name} — front view"></div>
+          <div class="product-main-image"><img id="main-product-image" src="${selectedImage}" alt="${product.name} in ${chosenColour.name}"></div>
           <div class="gallery-thumbnails" aria-label="Product image gallery">
             ${galleryImages.map((image, index) => `<button class="thumbnail ${image === selectedImage ? "is-selected" : ""}" type="button" data-image="${image}" aria-label="Show ${index === 0 ? "main" : "gallery"} view"><img src="${image}" alt="${chosenColour.name} ${product.name} gallery view ${index + 1}"></button>`).join("")}
           </div>
