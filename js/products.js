@@ -238,10 +238,10 @@ const PRODUCTS = [
     id: "cinderella-maroon-blouse",
     name: "Cinderella Maroon Colour Blouse for Women",
     shortName: "Cinderella",
-    // Catalogue offer: MRP ₹2,249 less 2% = selling price ₹2,199.
-    price: 2199,
+    // Catalogue offer: MRP ₹2,249 less 42% = selling price ₹1,299.
+    price: 1299,
     mrp: 2249,
-    discountPercent: 2,
+    discountPercent: 42,
     rating: 4.9,
     ratingCount: 348,
     category: "Heavy Embroidery",
