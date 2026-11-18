@@ -176,7 +176,7 @@ textarea { resize: vertical; }
 .product-card-bottom .text-link { min-height: 34px; font-size: 0.59rem; }
 .brand-story { overflow: hidden; color: var(--white); background: var(--maroon-dark); }
 .brand-story-grid { display: grid; }
-.brand-story-image { min-height: 320px; background: url("../images/masoba-side-maroon.jpeg") center top / cover; }
+.brand-story-image { min-height: 320px; background: url("../images/cinderella-maroon-front.png") center 21% / cover; }
 /* Mobile-only side padding keeps the story copy comfortably inside the screen. */
 .brand-story-content { padding: 54px 24px; }
 .brand-story-content .eyebrow { color: var(--pink-strong); }
