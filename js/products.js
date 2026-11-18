@@ -47,8 +47,7 @@ const PRODUCTS = [
       },
       { name: "Bottle Green", hex: "#0e4c3a", image: "images/masoba-green-front.jpeg" },
       { name: "Rani Pink", hex: "#b21968", image: "images/masoba-rani-pink-front.jpeg" }
-    ],
-    badge: "New collection"
+    ]
   },
   {
     id: "mumtaz-blouse",
@@ -93,8 +92,7 @@ const PRODUCTS = [
         name: "Bottle Green", hex: "#0b5138", image: "images/mumtaz-front-green.png",
         gallery: ["images/mumtaz-front-green-alt.png", "images/mumtaz-detail-green.jpeg"]
       }
-    ],
-    badge: "Festive pick"
+    ]
   },
   {
     id: "mumtaz-d2-blouse",
@@ -139,8 +137,7 @@ const PRODUCTS = [
         name: "White", hex: "#f8f6ef", image: "images/mumtaz-d2-white-front.png",
         gallery: ["images/mumtaz-d2-white-back.png", "images/mumtaz-d2-white-detail.png"]
       }
-    ],
-    badge: "New arrival"
+    ]
   },
   {
     id: "queen-blouse",
@@ -179,8 +176,7 @@ const PRODUCTS = [
       "images/queen-blouse-front-maroon.jpeg",
       "images/queen-blouse-back-maroon.jpeg",
       "images/queen-blouse-flat-lay-maroon.jpeg"
-    ],
-    badge: "New arrival"
+    ]
   },
   {
     id: "barby-blouse",
@@ -215,17 +211,20 @@ const PRODUCTS = [
     colours: [
       {
         name: "Red", hex: "#b81632", image: "images/barby-red-front.jpeg",
-        gallery: ["images/barby-red-back.jpeg", "images/barby-red-side.jpeg", "images/barby-red-detail.jpeg"]
+        gallery: ["images/barby-red-side.jpeg", "images/barby-red-back.jpeg", "images/barby-red-detail.jpeg"]
       },
       {
         name: "Tusser", hex: "#bc9352", image: "images/barby-tusser-front.jpeg",
-        gallery: ["images/barby-tusser-back.jpeg", "images/barby-tusser-side.jpeg", "images/barby-tusser-detail.jpeg"]
+        gallery: ["images/barby-tusser-side.jpeg", "images/barby-tusser-back.jpeg", "images/barby-tusser-detail.jpeg"]
       },
       {
         name: "Wine", hex: "#581447", image: "images/barby-wine-front.jpeg",
-        gallery: ["images/barby-wine-back.jpeg", "images/barby-wine-side.jpeg", "images/barby-wine-detail.jpeg"]
+        gallery: ["images/barby-wine-side.jpeg", "images/barby-wine-back.jpeg", "images/barby-wine-detail.jpeg"]
       },
-      { name: "Pink", hex: "#c3196a", image: "images/barby-pink-front.jpeg" }
+      {
+        name: "Pink", hex: "#c3196a", image: "images/barby-pink-front.jpeg",
+        gallery: ["images/barby-pink-collage.jpeg", "images/barby-pink-flat-lay.jpeg", "images/barby-pink-back.jpeg"]
+      }
     ],
     badge: "New arrival"
   },

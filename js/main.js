@@ -222,7 +222,7 @@ function productCard(product, variant) {
     <article class="product-card">
       <a class="product-image-link" href="${url}" aria-label="View ${title}">
         <img src="${colour.image}" alt="${product.name} in ${colour.name}" loading="lazy">
-        <span class="product-badge${product.badgeTheme ? ` product-badge--${product.badgeTheme}` : ""}">${product.badge}</span>
+        ${product.badge ? `<span class="product-badge${product.badgeTheme ? ` product-badge--${product.badgeTheme}` : ""}">${product.badge}</span>` : ""}
         ${product.promoBadge ? `<span class="product-sale-sticker">${product.promoBadge}</span>` : ""}
         <span class="product-image-overlay">View details</span>
       </a>
